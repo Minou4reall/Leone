@@ -1,0 +1,354 @@
+/* Start Global Rules */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+    --main-color: #10cab7;
+    --secondary-color: #2c4755;
+    --padding: 60px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Small */
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* Medium */
+
+@media (min-width: 992) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* Large */
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* End Global Rules */
+
+/* start components */
+
+.special-heading {
+    font-size: 100px;
+    margin: 0;
+    color: #ebeced;
+    letter-spacing: -3px;
+    text-align: center;
+}
+
+.special-heading+p {
+    text-align: center;
+    margin-top: -30px;
+    color: #797979;
+    font-size: 20px;
+}
+
+@media (max-width:767px) {
+    .special-heading {
+        font-size: 60px;
+    }
+
+    .special-heading+p {
+        margin-top: -20px;
+        font-size: 15px;
+    }
+}
+
+/* End components */
+
+
+/* Start Header */
+
+.header {
+    padding: 20px;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.header .logo {
+    width: 60px;
+    height: 25px;
+    background-image: url(../Images/logo.png);
+    background-size: cover;
+}
+
+.header .links .icon {
+    width: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.header .links:hover .icon span:nth-child(2) {
+    width: 100%;
+}
+
+.header .links .icon span {
+    background-color: #333;
+    margin-bottom: 5px;
+    height: 2px;
+}
+
+.header .links .icon span:first-child {
+    width: 100%;
+}
+
+.header .links .icon span:nth-child(2) {
+    width: 60%;
+    transition: 0.3s;
+}
+
+.header .links .icon span:last-child {
+    width: 100%;
+}
+
+.header .links {
+    position: relative;
+}
+
+.header .links ul {
+    list-style: none;
+    min-width: 200px;
+    margin: 0;
+    padding: 0;
+    background-color: #f6f6f6;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 15px);
+    display: none;
+    z-index: 1;
+}
+
+.header .links ul::before {
+    content: "";
+    border-style: solid;
+    border-width: 10px;
+    border-color: transparent transparent #f6f6f6 transparent;
+    position: absolute;
+    top: -20px;
+    right: 5px;
+}
+
+.header .links ul li a {
+    display: block;
+    padding: 15px;
+    color: #333;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.header .links ul li:not(:last-child) {
+    border-bottom: 1px solid #ddd;
+}
+
+.header .links ul li a:hover {
+    padding-left: 25px;
+}
+
+.header .links:hover ul {
+    display: block;
+}
+
+/* End Header */
+/* Start Landing */
+.landing {
+    height: calc(100vh - 65px);
+    background-image: url(../Images/3899617.jpg);
+    background-size: cover;
+    position: relative;
+}
+
+.landing .intro-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 320px;
+    max-width: 100%;
+}
+
+.landing .intro-text h1 {
+    margin: 0;
+    color: var(--main-color);
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.landing .intro-text p {
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+/* End Landing */
+/* Start Log In */
+.sec {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    padding-bottom: 100px;
+}
+
+.form-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.15);
+    border: 2px solid rgba(255,255,255,0.14);
+    border-radius: 20px;
+    backdrop-filter: blur(1px);
+}
+
+.sec h2 {
+    font-size: 2em;
+    text-align: center;
+    color: #fff;
+}
+
+.inputbox {
+    position: relative;
+    border-bottom: 2px solid #fff;
+    width: 310px;
+    margin: 20px auto;
+}
+.inputbox label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 5px;
+    color: #fff;
+    font-size: 1em;
+    pointer-events: none;
+    transition: .5s;
+}
+input:focus ~ label,
+input:valid ~ label {
+    top: -5px;
+}
+.inputbox input {
+    width: 100%;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #fff;
+    padding: 0 35px 0 5px;
+}
+.inputbox ion-icon {
+    position: absolute;
+    right: 8px;
+    top: 20px;
+    color: #fff;
+    font-size: 1.2em;
+}
+.forget {
+    display: flex;
+    justify-content: center;
+    font-size: .9em;
+    color: #fff;
+    margin: 0px 0 15px;
+}
+.forget input {
+    position: relative;
+    top: 1px;
+    margin-right: 5px;
+    accent-color: var(--secondary-color);
+}
+.forget label a {
+    margin-left: 3px;
+    color: #fff;
+    text-decoration: none;
+}
+.forget label a:hover {
+    text-decoration: underline;
+}
+button {
+    position: relative;
+    width: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 40px;
+    border-radius: 40px;
+    background-color: var(--main-color);
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+}
+.register {
+    display: flex;
+    justify-content: center;
+    font-size: .9em;
+    color: #fff;
+    margin: 25px 0 10px;
+    text-transform: capitalize;
+}
+.register p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+.register p a:hover {
+    text-decoration: underline;
+}
+.grid {
+    width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, auto));
+}
+/* End Log In */
+/* Start Footer */
+
+.footer {
+    margin-top: 1px;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 30px 10px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.footer span {
+    color: var(--main-color);
+}
+
+/* End Footer */
